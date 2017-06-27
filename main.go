@@ -11,6 +11,7 @@ func main() {
 	router.GET("/search", SearchHandler)
 	router.GET("/resources", ResourcesIndexHandler)
 	router.GET("/resources/:slug", ResourceShowHandler)
+	router.GET("/js/resources.js", ResourcesStaticIndexHandler)
 
 	router.Run() // listen and serve on 0.0.0.0:8080
 }

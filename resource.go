@@ -48,6 +48,8 @@ func GetResources() (resources []*Resource, err error) {
 
 	for _, r := range resources {
 		r.Slug = reg.ReplaceAllString(strings.ToLower(r.Name), "-")
+		r.Description = strings.Replace(r.Description, `"`, `\"`, -1)
+		r.Services = strings.Replace(r.Services, `"`, `\"`, -1)
 	}
 
 	return resources, nil

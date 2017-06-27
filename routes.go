@@ -56,3 +56,14 @@ func ResourceShowHandler(c *gin.Context) {
 		"Resources": []*Resource{resource},
 	})
 }
+
+func ResourcesStaticIndexHandler(c *gin.Context) {
+	resources, err := GetResources()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	c.HTML(http.StatusOK, "resources.js.tmpl", gin.H{
+		"Resources": resources,
+	})
+}
