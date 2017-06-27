@@ -5,9 +5,12 @@
       {{template "header" .}}
       {{template "searchbar" .}}
 
+      <div class="results">
+        <h3>Resource Details</h3>
+      </div>
+
       {{range .Resources}}
         <div class="results">
-          <h3>Resource Details</h3>
           <table>
             <tr>
               <th>Name</th>

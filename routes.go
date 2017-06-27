@@ -11,6 +11,15 @@ func IndexHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{})
 }
 
+func SearchHandler(c *gin.Context) {
+	query := c.Query("query")
+
+	c.HTML(http.StatusOK, "search.tmpl", gin.H{
+		"Query":     query,
+		"Resources": []interface{}{},
+	})
+}
+
 func ResourceShowHandler(c *gin.Context) {
 	slug := c.Param("slug")
 
@@ -25,11 +34,13 @@ func ResourceShowHandler(c *gin.Context) {
 	})
 }
 
-func SearchHandler(c *gin.Context) {
-	query := c.Query("query")
+func ResourcesIndexHandler(c *gin.Context) {
+	resources, err := GetResources()
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	c.HTML(http.StatusOK, "search.tmpl", gin.H{
-		"Query":     query,
-		"Resources": []interface{}{},
+	c.HTML(http.StatusOK, "resource.tmpl", gin.H{
+		"Resources": resources,
 	})
 }
