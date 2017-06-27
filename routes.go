@@ -1,10 +1,10 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/sent-hil/sfsbook-1/models"
 )
 
 func IndexHandler(c *gin.Context) {
@@ -14,11 +14,14 @@ func IndexHandler(c *gin.Context) {
 func ResourceShowHandler(c *gin.Context) {
 	name := c.Param("name")
 
+	resource, err := FindResource(name)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	c.HTML(http.StatusOK, "resource.tmpl", gin.H{
-		"Query": name,
-		"Resources": []*models.Resource{
-			{Name: "sfsbook"},
-		},
+		"Query":     name,
+		"Resources": []*Resource{resource},
 	})
 }
 
