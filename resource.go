@@ -53,14 +53,14 @@ func GetResources() (resources []*Resource, err error) {
 	return resources, nil
 }
 
-func FindResource(name string) (*Resource, error) {
+func GetResourceBySlug(slug string) (*Resource, error) {
 	resources, err := GetResources()
 	if err != nil {
 		return nil, err
 	}
 
 	for _, r := range resources {
-		if r.Slug == name {
+		if r.Slug == slug {
 			return r, nil
 		}
 	}

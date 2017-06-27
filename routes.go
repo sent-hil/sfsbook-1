@@ -14,7 +14,7 @@ func IndexHandler(c *gin.Context) {
 func ResourceShowHandler(c *gin.Context) {
 	slug := c.Param("slug")
 
-	resource, err := FindResource(slug)
+	resource, err := GetResourceBySlug(slug)
 	if err != nil {
 		log.Fatal(err)
 	}
