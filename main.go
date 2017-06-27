@@ -9,7 +9,7 @@ func main() {
 
 	router.GET("/", IndexHandler)
 	router.GET("/search", SearchHandler)
-	router.GET("/resources/:name", ResourceShowHandler)
+	router.GET("/resources/:slug", ResourceShowHandler)
 
 	router.Run() // listen and serve on 0.0.0.0:8080
 }

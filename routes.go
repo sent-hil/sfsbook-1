@@ -12,15 +12,15 @@ func IndexHandler(c *gin.Context) {
 }
 
 func ResourceShowHandler(c *gin.Context) {
-	name := c.Param("name")
+	slug := c.Param("slug")
 
-	resource, err := FindResource(name)
+	resource, err := FindResource(slug)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	c.HTML(http.StatusOK, "resource.tmpl", gin.H{
-		"Query":     name,
+		"Query":     slug,
 		"Resources": []*Resource{resource},
 	})
 }
