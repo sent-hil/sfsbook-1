@@ -7,17 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//----------------------------------------------------------
-// /
-//----------------------------------------------------------
-
 func IndexHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{})
 }
-
-//----------------------------------------------------------
-// /search
-//----------------------------------------------------------
 
 func SearchHandler(c *gin.Context) {
 	query := c.Query("query")
