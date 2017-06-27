@@ -49,7 +49,7 @@ func ResourceShowHandler(c *gin.Context) {
 	})
 }
 
-func ResourcesStaticIndexHandler(c *gin.Context) {
+func ResourcesJsIndexHandler(c *gin.Context) {
 	resources, err := GetResources()
 	if err != nil {
 		log.Fatal(err)
