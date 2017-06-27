@@ -8,6 +8,7 @@ func main() {
 	router.Static("/static", "./static")
 
 	router.GET("/", IndexHandler)
+	router.GET("/search", SearchHandler)
 
 	router.Run() // listen and serve on 0.0.0.0:8080
 }
