@@ -8,19 +8,20 @@ We use [Gin http framework](https://github.com/gin-gonic/gin) for routing and
 rendering of paths.
 
 main.go - contains the Gin initializer and sets up various routes and runs the
-server
+server.
 
-route_index.go - contains the index handler.
+routes.go - contains various handlers; will be moved to own package once this
+file becomes too big.
 
 templates/ - contains various Go templates.
 
 static/ - contains js and css files; this folder is server to the public, so
 BEWARE!
 
-refguides/ - contains the resources in various formats.
+refguides/ - contains the resources in various formats; nested by date pdf was
+added.
 
-vendor/ - contains vendored dependencies; if you add a new dep, be sure to add
-it to this folder with `govendor add +external`
+vendor/ - contains vendored dependencies;
 
 ## Development
 
@@ -33,4 +34,9 @@ Run server with:
 
     gin run main.go
 
-This should start server at http://localhost:3000.
+If you add a new dep, be sure to add it to vendor/ with:
+
+    govendor add +external
+    go get -u github.com/kardianos/govendor
+
+You can access the server at: http://localhost:3000.
