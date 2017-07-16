@@ -14,11 +14,11 @@ footer
 
 /* reset */
 
-/* 
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
  */
 
@@ -31,7 +31,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
   margin:0;
@@ -48,7 +48,7 @@ body {
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
   display:block;
 }
 
@@ -89,7 +89,7 @@ ins {
 /* change colours to suit your needs */
 mark {
   background-color:#ff9;
-  color:#000; 
+  color:#000;
   font-style:italic;
   font-weight:bold;
 }
@@ -112,7 +112,7 @@ table {
 hr {
   display:block;
   height:1px;
-  border:0;   
+  border:0;
   border-top:1px solid #cccccc;
   margin:1em 0;
   padding:0;
@@ -136,7 +136,6 @@ a:active {
 }
 body, html {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
 }
 form {
   margin: 0;
@@ -192,7 +191,7 @@ input {
   display: block!important;
 }
 
-/* header */ 
+/* header */
 h1 {
   font-size: xx-large;
 }
@@ -215,30 +214,25 @@ h2 {
   width: 100%;
   padding: 1em;
   position: relative;
-  background: rgba(0,179,152, 0.5);
+  background: rgba(0,179,152, 0.4);
   box-sizing: border-box;
 }
-.header-links div {
+.header-links a {
   display: inline-block;
-  width: 35%;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  padding: 5px;
+  width: 150px;
+}
+.header-links li {
+  display: inline;
 }
 .header-section {
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  width: 25%; 
-}
-.header-section:first-child {
-  float: left; 
 }
 .header-section:first-child + div {
   margin: auto;
-  float: none;
-  width:50%;
-  text-align: center; 
+  float: right;
+  text-align: center;
 }
 .header-section ul {
   list-style: none;
@@ -252,6 +246,10 @@ h2 {
 }
 .hotline:hover {
   background: rgba(12,121,189,1);
+}
+.hotline, .escape {
+  border-radius: 3px;
+  padding: 5px;
 }
 .user-menu:hover .user-menu-dropdown {
   display: block;
@@ -348,9 +346,9 @@ li:hover > ul {
   background: rgb(0,197,182);
 }
 .filter-carrot {
-  width: 0; 
+  width: 0;
   border-left: 5px solid transparent;
-  border-right: 5px solid transparent;        
+  border-right: 5px solid transparent;
   border-top: 5px solid #00B398;
   position: absolute;
   top: 45%;
@@ -390,7 +388,7 @@ li:hover > ul {
   padding: 0;
   margin: auto;
   text-align: center;
-}	
+}
 .nav div {
   display: inline-block;
 }
@@ -398,7 +396,7 @@ li:hover > ul {
   display: block;
   text-decoration: none;
   padding: 10px;
-}	
+}
 .nav:hover a {
   border-bottom-left-radius: 0;
 }
@@ -437,12 +435,13 @@ li:hover > ul {
   text-align: center;
   padding: 3%;
   height: 35px;
-  background: rgba(126, 129, 170, 0.3);
+  background: rgba(126, 129, 170, 0.15);
 }
 .search-facade {
   display: block;
   margin: 0 10px 0 7px;
   width: auto;
+  cursor: pointer;
 }
 .category:hover .category-option {
   display: block;
@@ -457,6 +456,7 @@ li:hover > ul {
   top: 100%;
   left: 0;
   text-align: left;
+  cursor: pointer;
 }
 .search-filters:hover > .category {
   display: block;
@@ -679,6 +679,11 @@ textarea {
   }
   .header h1 {
     font-size: 160%;
+  }
+  .logo {
+    display: block;
+    text-align: center;
+    margin-bottom: 5%
   }
 }
 
