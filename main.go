@@ -6,6 +6,7 @@ func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*")
 	router.Static("/static", "./static")
+	router.StaticFile("/service-worker.js", "./service-worker.js")
 
 	router.GET("/", IndexHandler)
 	router.GET("/search", SearchHandler)

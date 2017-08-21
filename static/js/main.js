@@ -69,3 +69,7 @@ function ready(fn) {
 ready(attachToggles);
 // will uncomment this out when we refactor to single page search
 // ready(attachSearchListeners);
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
